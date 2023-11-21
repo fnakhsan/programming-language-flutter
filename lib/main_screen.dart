@@ -107,7 +107,7 @@ class ProgrammingGrid extends StatelessWidget {
                   Expanded(
                     child: Image.asset(
                       programmingLanguage.image,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   ),
                   const SizedBox(height: 8),
