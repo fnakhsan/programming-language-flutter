@@ -11,6 +11,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Programming Language'),
       ),
       body: LayoutBuilder(
@@ -48,7 +49,10 @@ class ProgrammingList extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   flex: 1,
-                  child: Image.asset(programmingLanguage.image),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Image.asset(programmingLanguage.image),
+                  ),
                 ),
                 Expanded(
                   flex: 2,
@@ -105,9 +109,12 @@ class ProgrammingGrid extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: Image.asset(
-                      programmingLanguage.image,
-                      fit: BoxFit.contain,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        programmingLanguage.image,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -122,9 +129,11 @@ class ProgrammingGrid extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
                     child: Text(
                       programmingLanguage.paradigm,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
